@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ESDEE LUXURA — bespoke fashion design, elegant custom pieces and contemporary African-inspired fashion.">
+<title>ESDEE LUXURA | Styled With Elegance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#171512;--cream:#f6f1e9;--paper:#fbf9f5;--muted:#756f66;--line:#ddd5ca;--gold:#b08a54}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px 5vw;background:rgba(251,249,245,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(221,213,202,.55)}
+.brand{font-family:"Cormorant Garamond",serif;font-size:28px;letter-spacing:.12em;font-weight:600}.navlinks{display:flex;gap:28px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}.navlinks a{opacity:.75}.navlinks a:hover{opacity:1}
+.hero{min-height:100vh;padding:150px 5vw 70px;display:grid;grid-template-columns:1.02fr .98fr;gap:7vw;align-items:center;background:var(--cream)}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(64px,9vw,138px);line-height:.78;margin:0 0 28px;font-weight:500;letter-spacing:-.04em}.hero h1 span{display:block;margin-left:.6em}.hero p{max-width:520px;color:var(--muted);line-height:1.8;font-size:16px}.cta{display:inline-flex;gap:10px;align-items:center;margin-top:26px;padding:15px 22px;background:var(--ink);color:white;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.cta:hover{background:#2b2824}.hero-image{height:650px;overflow:hidden;position:relative}.hero-image img{width:100%;height:100%;object-fit:cover;object-position:center 18%}.hero-image:after{content:"ESDEE";position:absolute;bottom:18px;left:18px;color:white;font-family:"Cormorant Garamond";font-size:70px;opacity:.14}
+.section{padding:105px 5vw}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.25em;color:var(--gold)}h2{font-family:"Cormorant Garamond",serif;font-size:clamp(48px,6vw,78px);font-weight:500;line-height:.9;margin:10px 0 0}.intro{max-width:420px;color:var(--muted);line-height:1.8}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}.filter{border:1px solid var(--line);background:transparent;padding:10px 15px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.filter.active,.filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{position:relative;overflow:hidden;background:#eee;cursor:pointer}.card:nth-child(3n+2){margin-top:70px}.card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .7s ease}.card:hover img{transform:scale(1.035)}.card-info{padding:14px 2px 20px;background:var(--paper)}.card-num{font-size:10px;color:var(--gold);letter-spacing:.15em}.card-title{font-family:"Cormorant Garamond";font-size:28px;margin-top:3px}.card-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.about{background:var(--ink);color:#f8f3ea;display:grid;grid-template-columns:1fr 1fr;gap:9vw;align-items:center}.about p{color:#c8c0b5;line-height:1.9;max-width:580px}.about h2{font-size:clamp(55px,7vw,95px)}.signature{font-family:"Cormorant Garamond";font-size:38px;color:var(--gold);margin-top:30px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:50px}.service{padding:30px 22px 20px 0;border-right:1px solid var(--line)}.service:not(:first-child){padding-left:22px}.service:last-child{border-right:0}.service h3{font-family:"Cormorant Garamond";font-size:30px;margin:0 0 10px}.service p{font-size:13px;color:var(--muted);line-height:1.7}
+.contact{background:var(--cream);text-align:center}.contact h2{max-width:800px;margin:12px auto 20px}.contact p{max-width:540px;margin:auto;color:var(--muted);line-height:1.8}.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.outline{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.footer{padding:28px 5vw;display:flex;justify-content:space-between;gap:20px;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.lightbox{position:fixed;inset:0;background:rgba(12,11,10,.94);z-index:50;display:none;align-items:center;justify-content:center;padding:5vw}.lightbox.open{display:flex}.lightbox img{max-width:90vw;max-height:88vh;object-fit:contain}.close{position:absolute;right:30px;top:20px;color:#fff;font-size:35px;background:none;border:0;cursor:pointer}.lb-title{position:absolute;bottom:25px;left:30px;color:#fff;font-family:"Cormorant Garamond";font-size:26px}
+@media(max-width:850px){.nav{padding:16px 5vw}.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:120px}.hero-image{height:520px}.grid{grid-template-columns:1fr 1fr}.card:nth-child(3n+2){margin-top:0}.card:nth-child(odd){margin-top:45px}.about{grid-template-columns:1fr}.services{grid-template-columns:1fr}.service{border-right:0;border-bottom:1px solid var(--line);padding:25px 0!important}.footer{flex-direction:column}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.card:nth-child(odd){margin-top:0}.hero h1{font-size:76px}.section{padding:75px 5vw}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="#top">ESDEE LUXURA</a>
+  <div class="navlinks"><a href="#work">Collection</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div>
+    <div class="kicker">Fashion Design Studio</div>
+    <h1>Styled<br><span>With</span><br>Elegance.</h1>
+    <p>Contemporary fashion crafted with intention — from refined occasion pieces to expressive prints and tailored silhouettes.</p>
+    <a class="cta" href="#work">Explore the collection <span>↓</span></a>
+  </div>
+  <div class="hero-image"><img src="assets/green-tailored-suit.jpeg" alt="ESDEE LUXURA tailored green suit"></div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-head">
+    <div><div class="eyebrow">Selected Work / 2026</div><h2>The Collection</h2></div>
+    <p class="intro">A selection of recent pieces by ESDEE LUXURA, showcasing bespoke construction, distinctive fabrics and elegant finishing.</p>
+  </div>
+  <div class="filters">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="occasion">Occasion</button>
+    <button class="filter" data-filter="prints">Prints</button>
+    <button class="filter" data-filter="tailoring">Tailoring</button>
+    <button class="filter" data-filter="modern">Modern</button>
+  </div>
+  <div class="grid" id="gallery"></div>
+</section>
+
+<section class="section about" id="about">
+  <div><div class="eyebrow">The Studio</div><h2>Made to<br>be remembered.</h2></div>
+  <div>
+    <p>ESDEE LUXURA is a fashion design brand focused on creating distinctive pieces that balance elegance, personality and craftsmanship. Every garment is designed to make the wearer feel considered, confident and beautifully styled.</p>
+    <p>From custom occasionwear to contemporary everyday statements, the studio turns fabric, silhouette and detail into pieces with a clear point of view.</p>
+    <div class="signature">ESDEE LUXURA</div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="eyebrow">What We Create</div>
+  <div class="services">
+    <div class="service"><h3>Bespoke Design</h3><p>Custom garments designed around your event, taste and personal style.</p></div>
+    <div class="service"><h3>Occasionwear</h3><p>Elegant dresses and statement pieces for celebrations, ceremonies and special appearances.</p></div>
+    <div class="service"><h3>Tailoring</h3><p>Structured separates, coordinated sets and polished silhouettes with refined finishing.</p></div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="eyebrow">Start a Conversation</div>
+  <h2>Have a design in mind?</h2>
+  <p>Tell us what you want to create and let ESDEE LUXURA turn the idea into a finished piece.</p>
+  <div class="contact-actions">
+    <a class="cta" href="https://wa.me/2348109075055" target="_blank" rel="noopener">WhatsApp the studio</a>
+    <a class="cta outline" href="https://www.instagram.com/esdeeluxura/" target="_blank" rel="noopener">Instagram</a>
+    <a class="cta outline" href="https://www.tiktok.com/@esdeeluxura" target="_blank" rel="noopener">TikTok</a>
+    <a class="cta outline" href="https://www.facebook.com/esdeeluxura" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <span>© 2026 ESDEE LUXURA</span>
+  <span>Styled With Elegance</span>
+  <span>WhatsApp: +234 810 907 5055</span>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="close" aria-label="Close">&times;</button>
+  <img id="lbimg" src="" alt="">
+  <div class="lb-title" id="lbtitle"></div>
+</div>
+
+<script>
+const projects = [["01", "Noir Croc", "Statement Mini Dress", "black-textured-mini-dress.jpeg"], ["02", "Silk Noir", "Draped Satin Set", "black-satin-draped-set.jpeg"], ["03", "Heritage", "Embellished Ankara Dress", "ankara-embellished-dress.jpeg"], ["04", "Soft Pleat", "One-Shoulder Pleated Dress", "pleated-one-shoulder-dress.jpeg"], ["05", "Print & Form", "Contemporary Print Dress", "printed-peplum-dress.jpeg"], ["06", "Aqua Luxe", "Embroidered Occasion Dress", "aqua-embroidered-dress.jpeg"], ["07", "Violet Line", "Two-Tone Tailored Dress", "purple-panel-dress.jpeg"], ["08", "Denim Muse", "Halter Jumpsuit Set", "denim-halter-set.jpeg"], ["09", "Olive Authority", "Double-Breasted Suit", "green-tailored-suit.jpeg"], ["10", "Floral Ease", "Floral Statement Dress", "floral-print-dress.jpeg"]];
+const categories = {
+  0:"modern",1:"occasion",2:"prints",3:"occasion",4:"prints",
+  5:"occasion",6:"modern",7:"modern",8:"tailoring",9:"prints"
+};
+const gallery = document.getElementById("gallery");
+function render(filter="all"){
+  gallery.innerHTML = projects.map((p,i)=>{
+    if(filter!=="all" && categories[i]!==filter) return "";
+    return `<article class="card" data-index="${i}">
+      <img src="assets/${p[3]}" alt="${p[1]} — ${p[2]}" loading="lazy">
+      <div class="card-info"><div class="card-num">${p[0]}</div><div class="card-title">${p[1]}</div><div class="card-sub">${p[2]}</div></div>
+    </article>`;
+  }).join("");
+  document.querySelectorAll(".card").forEach(c=>c.addEventListener("click",()=>{
+    const p=projects[c.dataset.index];
+    document.getElementById("lbimg").src="assets/"+p[3];
+    document.getElementById("lbimg").alt=p[1];
+    document.getElementById("lbtitle").textContent=p[1]+" — "+p[2];
+    document.getElementById("lightbox").classList.add("open");
+  }));
+}
+render();
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active"); render(btn.dataset.filter);
+}));
+document.querySelector(".close").onclick=()=>document.getElementById("lightbox").classList.remove("open");
+document.getElementById("lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")e.currentTarget.classList.remove("open")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")document.getElementById("lightbox").classList.remove("open")});
+</script>
+</body>
+</html>
